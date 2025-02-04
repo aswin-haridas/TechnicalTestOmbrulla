@@ -79,5 +79,5 @@ const ChartContainer = styled.div`
   border-radius: 10px;
   border: 1px solid rgb(211, 211, 211);
   width: 700px;
-  height: 100%;
+  height: 400px;
 `;

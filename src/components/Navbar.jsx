@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const NavContainer = styled.div`
@@ -10,6 +10,7 @@ const NavItem = styled.div`
   font-size: 14px;
   color: rgb(138, 138, 138);
   padding: 10px;
+  cursor: pointer;
 `;
 
 const NavItemSelected = styled(NavItem)`
@@ -17,13 +18,34 @@ const NavItemSelected = styled(NavItem)`
   color: rgb(121, 172, 255);
 `;
 
-const Navbar = () => (
-  <NavContainer>
-    <NavItem>Operation</NavItem>
-    <NavItemSelected>Sustainabilty</NavItemSelected>
-    <NavItem>AI Insights</NavItem>
-    <NavItem>My Custom Dashboard</NavItem>
-  </NavContainer>
-);
+const navItems = [
+  { id: 1, text: "Operation" },
+  { id: 2, text: "Sustainabilty" },
+  { id: 3, text: "AI Insights" },
+  { id: 4, text: "My Custom Dashboard" },
+];
+
+const Navbar = () => {
+  const [selectedItem, setSelectedItem] = useState("Sustainabilty");
+
+  return (
+    <NavContainer>
+      {navItems.map((item) =>
+        item.text === selectedItem ? (
+          <NavItemSelected
+            key={item.id}
+            onClick={() => setSelectedItem(item.text)}
+          >
+            {item.text}
+          </NavItemSelected>
+        ) : (
+          <NavItem key={item.id} onClick={() => setSelectedItem(item.text)}>
+            {item.text}
+          </NavItem>
+        )
+      )}
+    </NavContainer>
+  );
+};
 
 export default Navbar;
