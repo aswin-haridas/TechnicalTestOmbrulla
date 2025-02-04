@@ -44,7 +44,7 @@ const Wrapper = styled.div`
   border-radius: 15px;
   display: flex;
   padding: 15px;
-  margin:20px;
+  margin: 20px;
   background-color: rgb(255, 255, 255);
 `;
 
@@ -56,10 +56,14 @@ const Card = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 10px;
 `;
 const CardTitle = styled.div`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   color: ${({ color }) => color};
 `;
-const CardDesc = styled.div`text-align: center;`;
+const CardDesc = styled.div`
+  text-align: center;
+  font-size: 14px;
+`;

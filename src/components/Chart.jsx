@@ -32,29 +32,29 @@ const options = {
       display: true,
       text: "Chart.js Line Chart",
     },
-    scales: {
-      y: {
-        min: 0, 
-        max: 60000, 
-      },
+  },
+  scales: {
+    y: {
+      min: 0,
+      max: 60000,
+      beginAtZero: true,
     },
   },
 };
-
-const labels = ["16 January", "14 January", "12 January", "10 January"];
+const labels = ["16 January", "14 January", "12 January", "10 January", "8 January"];
 
 const data = {
   labels,
   datasets: [
     {
       label: "Dataset 1",
-      data: [35000, 45000, 31000, 35000, 40000],
+      data: [35000, 42000, 31000, 35000, 40000],
       borderColor: "rgb(255, 99, 132)",
       backgroundColor: "rgba(255, 99, 132, 0.5)",
     },
     {
       label: "Dataset 2",
-      data: [35000, 25000, 37000, 37000, 40000],
+      data: [35000, 35000, 37000, 37000, 40000],
       borderColor: "rgb(53, 162, 235)",
       backgroundColor: "rgba(53, 162, 235, 0.5)",
     },
